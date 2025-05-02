@@ -8,7 +8,7 @@ CREATE TABLE users (
 );
 
 -- Table des créneaux horaires
-CREATE TABLE horaires (
+CREATE TABLE slots (
     id SERIAL PRIMARY KEY,
     start_time TIMESTAMP NOT NULL,
     end_time TIMESTAMP NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE horaires (
 );
 
 -- Table des rendez-vous
-CREATE TABLE rendezvous (
+CREATE TABLE appointments (
     id SERIAL PRIMARY KEY,
     user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     slot_id INTEGER NOT NULL REFERENCES slots(id) ON DELETE CASCADE,
